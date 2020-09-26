@@ -1,65 +1,82 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+//Component
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import TypeDrinks from '../components/main/typeDrinks';
+import Nav from '../components/global/Navbar';
+import Header from '../components/global/header';
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+export default function Home(){
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+	
+	return (
+		<main>
+			<div className="phone">
+				<Header/>
+				
+				<TypeDrinks/>
+				<div className="navbar">
+					<Nav active={"home"}/>
+				</div>
+			</div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+			<style jsx>{`
+				.navbar{
+					position: fixed;
+					bottom: 0;
+				}
+				
+				@media(max-width: 500px){
+					main{
+						min-height: 100vh;
+					}
+					main>div{
+						position: relative;
+						background: #2A0E58;
+						width: 100%;
+						min-height: 100vh;
+					}
+				}
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+				@media(min-width: 500px){
+					main{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						height: 100vh;
+						position: relative;
+						
+					}
+					.phone{
+						border-radius: 10px;
+						display: block;
+						position: relative;
+						width: 400px;
+						max-height: 90vh;
+						min-height: 500px;
+						overflow-Y: auto;
+						overflow-X: hidden;
+						background: #2A0E58;
+					}
+					.phone::-webkit-scrollbar{
+						background: rgba(85,85,85,0.1);
+						border-radius: 10px;
+						width: 10px;
+					}
+					.phone::-webkit-scrollbar-thumb{
+					  	background: #4B1A9C;
+					  	border-radius: 10px;
+					}
+				}
+			`}</style>
+			<style jsx global>{`
+				body{
+					height: 100vh;
+					padding: 0;
+					margin: 0;
+				}
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+			`}</style>
+		</main>
+	)
 }
