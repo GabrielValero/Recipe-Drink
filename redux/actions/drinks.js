@@ -1,13 +1,20 @@
-export const OBTENER_FIRST_LETTER = "first letter";
+export const OBTENER_INGREDIENTE = "first letter";
 
-export const drinksFirstLetter = ()=> async (dispatch, getState)=>{
-	const getDrinks = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
-		.then(res=> res.json())
-		.then(response =>{
-			return response.drinks;
+export const drinksIngrediente = (name)=> async (dispatch, getState)=>{
+	const getDrinks = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${name}`)
+		.then(res=> {
+			
+			return res.json()
 		})
+		.then(response =>{
+			return response.drinks
+		})
+		.catch(err=> {
+			console.log(err);
+			return {error: "Hubo un error"};
+		});
 	dispatch({
-		type: OBTENER_FIRST_LETTER,
+		type: OBTENER_INGREDIENTE,
 		payload: getDrinks 
 	})
 }
@@ -24,6 +31,12 @@ export const drinksFilter = (type, search)=> async (dispatch, getState)=>{
 	dispatch({
 		type: OBTENER_POR_FILTRO,
 		payload: getDrinks
+	})
+}
+
+export const RESET_ACTION = ()=> async (dispatch, getState)=>{
+  dispatch({
+		type: "RESET"
 	})
 }
 //ingredient

@@ -12,7 +12,7 @@ export default function Home(){
 	return (
 		<main>
 			<div className="phone">
-				<Header/>
+				<Header page={"home"}/>
 				
 				<TypeDrinks/>
 				<div className="navbar">

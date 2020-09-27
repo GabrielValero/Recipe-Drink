@@ -1,14 +1,11 @@
 import Link from 'next/link';
 
-export default function Card({drink, type}){
-	
-
+export default function Card({drink}){
 	return (
 		<div className="card">
 			<img src={drink.strDrinkThumb} alt={drink.strDrink} height="100%"/>
 			<div className="text">
 				<h3>{drink.strDrink}</h3>
-				<small>{type}</small>
 			</div>
 			<style jsx>{`
 				.card{
@@ -37,7 +34,7 @@ export default function Card({drink, type}){
 				img{
 					border-radius: 50px;
 					border: 2px solid #AC6787;
-					filter: drop-shadow(0px 0px 20px rgba(214, 207, 56, 0.5));
+					filter: drop-shadow(0px 0px 15px rgba(214, 207, 56, 0.5));
 				}
 			`}</style>
 		</div>

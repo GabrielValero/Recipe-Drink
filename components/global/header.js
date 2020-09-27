@@ -5,8 +5,9 @@ import {useState} from 'react';
 
 //components
 import Drawer from './Drawer';
+import Search from '../searchPage/Search';
 
-export default function Header(){
+export default function Header({page}){
 
 	const [open, setOpen] = useState(false);
 
@@ -17,7 +18,7 @@ export default function Header(){
 	return(
 		<>
 			<nav>
-				<img src="/Images/Logo.png" alt="Logo" width="60%"/>
+				{page == "home" ? <img src="/Images/Logo.png" alt="Logo" width="60%"/> : <Search/>}
 					
 				<div>
 					<IconButton  aria-label="menu" fontSize="large" onClick={()=>{setOpen(true)}}>
@@ -33,6 +34,8 @@ export default function Header(){
 			<style jsx>{`
 				nav{
 					width: 100%;
+					padding: 10px;
+					box-sizing: border-box;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
@@ -59,11 +62,6 @@ export default function Header(){
 					padding: 1px;
 					border-radius: 10px;
 					background: #E0E0E0;
-				}
-				@media(max-width: 500px){
-					nav>div{
-						display: none;
-					}
 				}
 			`}</style>
 		</>

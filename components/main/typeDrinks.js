@@ -1,13 +1,11 @@
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {drinksFilter} from '../../redux/actions/drinks';
+import {drinksFilter, RESET_ACTION} from '../../redux/actions/drinks';
 import Card from '../global/card';
 
 export default function TypeDrink(){
 	const [drinks, setDrinks] = useState([])
-	/*const [drinksO, setDrinksAO = useState([])
-	const [drinksN, setDrinksN] = useState([])*/
 	const [type, setType] = useState('Optional_alcohol')
 
 	const dispatch = useDispatch();
@@ -21,7 +19,12 @@ export default function TypeDrink(){
 		dispatch(drinksFilter("a","Optional_alcohol"));
 	}
 	useEffect(()=>{
-		setDrinks(getDrinks)
+		let mounted = true;
+		mounted && setDrinks(getDrinks);
+
+		return ()=>{
+			mounted = false;
+		}
 	}, [getDrinks])
 	return(
 		<div className="container">
@@ -34,7 +37,7 @@ export default function TypeDrink(){
 			</div>
 			<div className="drinks">
 				{drinks.map(drink=>(
-					<Card drink={drink} type={type} key={drink.idDrink}/>
+					<Card drink={drink} key={drink.idDrink}/>
 				))}
 			</div>
 			<style jsx>{`

@@ -2,12 +2,14 @@ import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import PersonIcon from '@material-ui/icons/Person';
 
+import Link from 'next/link';
+
 export default function Nav({active}){
 	return(
 		<div className="container">
 			<div className="bar">
-				<div className="icon search"><SearchIcon fontSize="large" style={{color: "#DDDDDD"}}/></div>
-				<div className="icon home"><HomeIcon fontSize="large" style={{color: "#DDDDDD"}}/></div>
+				<Link href="/search"><div className="icon search"><SearchIcon fontSize="large" style={{color: "#DDDDDD"}}/></div></Link>
+				<Link href="/"><div className="icon home"><HomeIcon fontSize="large" style={{color: "#DDDDDD"}}/></div></Link>
 				<div className="icon person"><PersonIcon fontSize="large" style={{color: "#DDDDDD"}}/></div>
 			</div>
 			<style jsx>{`
@@ -19,7 +21,7 @@ export default function Nav({active}){
 					align-items: center;
 					border-radius: 10px;
 					background: linear-gradient(90deg, #EC008C 0%, #FC6767 100%);
-					box-shadow: 0px 0px 50px #F64174;
+					box-shadow: 0px 0px 20px #F64174;
 				}
 				.icon{
 					padding: 10px;
