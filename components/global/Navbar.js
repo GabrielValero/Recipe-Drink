@@ -50,6 +50,11 @@ export default function Nav({active}){
 					}
 				}
 			`}</style>
+			<style jsx global>{`
+				body{
+					font-family: 'Roboto', sans-serif;
+				}
+				`}</style>
 		</div>
 	)
 }
