@@ -1,15 +1,20 @@
 import {IconButton} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import {useState} from 'react';
+import {useRouter} from 'next/router';
 
 //components
 import Drawer from './Drawer';
 import Search from '../searchPage/Search';
 
+
+
 export default function Header({page}){
 
 	const [open, setOpen] = useState(false);
+	const router = useRouter();
 
 	const close = ()=>{
 		setOpen(!open)
@@ -18,7 +23,15 @@ export default function Header({page}){
 	return(
 		<>
 			<nav>
-				{page == "home" ? <img src="/Images/Logo.png" alt="Logo" width="60%"/> : <Search/>}
+				{page == "home" && <img src="/Images/Logo.png" alt="Logo" width="60%"/>}
+				{page == "search" && <Search/>}
+				{page == "detail" && (
+					<IconButton  aria-label="ArrowBackIcon" fontSize="large"
+					style={{borderRadius: 5, background: "linear-gradient(90deg, #EC008C 0%, #FC6767 100%)", color: "#E0E0E0", padding: 10, marginLeft:10}}
+					onClick={()=>router.back()}>
+					  <ArrowBackIcon/>
+					</IconButton>
+				)}
 					
 				<div>
 					<IconButton  aria-label="menu" fontSize="large" onClick={()=>{setOpen(true)}}>
@@ -39,7 +52,9 @@ export default function Header({page}){
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
-					background: #2A0E58;
+					background: transparent;
+					position: relative;
+					z-index: 1000;
 				}
 				nav img{
 					margin-left: 20px;
@@ -54,7 +69,7 @@ export default function Header({page}){
 					flex-direction: column;
 					box-shadow: 0px 20px <4></4>0px rgba(240, 24, 131, 0.25);
 					background: linear-gradient(90deg, #EC008C 0%, #FC6767 100%);
-					border-radius: 10px;
+					border-radius: 5px;
 					color: #FFFFFF;
 				}
 				.menu div{

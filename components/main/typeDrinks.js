@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {drinksFilter, RESET_ACTION} from '../../redux/actions/drinks';
+import {drinksFilter} from '../../redux/actions/drinks';
 import Card from '../global/card';
 
 export default function TypeDrink(){

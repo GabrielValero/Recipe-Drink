@@ -3,17 +3,17 @@ import Link from 'next/link';
 export default function Card({drink}){
 	return (
 		<>
-			<Link href={`/bebida?id=${drink.idDrink}`}>
+			<Link href={`/bebida?id=${drink.id}`}>
 				<div className="card">
-					<img src={drink.strDrinkThumb} alt={drink.strDrink} height="100%"/>
+					<img src={drink.poster} alt={drink.name} height="100%"/>
 					<div className="text">
-						<h3>{drink.strDrink}</h3>
+						<h3>{drink.name}</h3>
 					</div>
 				</div>
 			</Link>
 			<style jsx>{`
 				.card{
-					width: 90%;
+					width: 100%;
 					margin: 15px 0;
 					height: 80px;
 					display: flex;

@@ -4,10 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk';
 
 import FirstLetterReducer, {initialState} from './reducers/drinkReducer';
+import DrinkIdReducer from './reducers/DrinkIdReducer';
 
 let store
 
 const reducer = combineReducers({
+  DrinkIdReducer,
 	FirstLetterReducer
 })
 

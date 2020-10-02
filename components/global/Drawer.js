@@ -39,12 +39,14 @@ export default function DrawerToggle({open, onClose}){
 						<ListItemText primary="Buscar"/>
 					</ListItem>
 				</Link>
-				<ListItem button>
-					<ListItemIcon>
-						<PersonIcon/>
-					</ListItemIcon>
-					<ListItemText primary="User"/>
-				</ListItem>
+				<Link href="/user">
+					<ListItem button>
+						<ListItemIcon>
+							<PersonIcon/>
+						</ListItemIcon>
+						<ListItemText primary="User"/>
+					</ListItem>
+				</Link>
 				
 			</List>
 		</Drawer>
