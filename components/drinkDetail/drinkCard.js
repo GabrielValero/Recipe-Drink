@@ -16,7 +16,7 @@ export default function DrinkCard({drink}){
 			</div>
 			<Button/>
 			<div>
-				<h2>Instrucciones</h2>
+				<h2>Instructions</h2>
 				<p>{drink.strInstructions}</p>
 			</div>
 			<style jsx>{`

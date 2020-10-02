@@ -50,13 +50,13 @@ export default function Home(){
 				</div>
 
 				<section>
-					{error != "No error" ? <h2>Ingrese un ingrediente válido</h2> : drinks.map(drink=>(
+					{error != "No error" ? <h2>Invalid Ingredient</h2> : drinks.map(drink=>(
 						<Card drink={drink} key={drink.idDrink}/>
 					))}
 				</section>
 				<div className="images">
 					<img src="/Images/animalitoDrinks.svg" alt="Svg imagen" width="40%"/>
-					<h2>No Hay Mas Bebidas</h2>
+					<h2>There are not more drinks</h2>
 				</div>
 				<div className="navbar">
 					<Nav active={"search"}/>

@@ -20,7 +20,7 @@ export default function Search(){
 	}
 	return(
 		<form action="/" onSubmit={handleOnSubmit}>
-			<input className="search" ref={myRef} type="text" placeholder="Buscar por ingrediente"/>
+			<input className="search" ref={myRef} type="text" placeholder="Look by ingredient"/>
 			<div className="button">
 				<IconButton type="submit">
 					<div className="icon">

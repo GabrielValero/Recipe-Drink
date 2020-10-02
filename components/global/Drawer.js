@@ -28,7 +28,7 @@ export default function DrawerToggle({open, onClose}){
 						<ListItemIcon>
 							<HomeIcon/>
 						</ListItemIcon>
-						<ListItemText primary="Inicio"/>
+						<ListItemText primary="Home"/>
 					</ListItem>
 				</Link>
 				<Link href="/search">
@@ -36,7 +36,7 @@ export default function DrawerToggle({open, onClose}){
 						<ListItemIcon>
 							<SearchIcon/>
 						</ListItemIcon>
-						<ListItemText primary="Buscar"/>
+						<ListItemText primary="Search"/>
 					</ListItem>
 				</Link>
 				<Link href="/user">

@@ -30,9 +30,9 @@ export default function TypeDrink(){
 		<div className="container">
 			<div className="types">
 				<div>
-					<p className="option Alcoholic" onClick={()=>handleOnClick("Alcoholic")}>Alcoholica</p>
-					<p className="option Optional_alcohol" onClick={()=>handleOnClick("Optional_alcohol")}>Opcional</p>
-					<p className="option Non_alcoholic" onClick={()=>handleOnClick("Non_alcoholic")}>No Alcohol</p>
+					<p className="option Alcoholic" onClick={()=>handleOnClick("Alcoholic")}>Alcoholic</p>
+					<p className="option Optional_alcohol" onClick={()=>handleOnClick("Optional_alcohol")}>Optional</p>
+					<p className="option Non_alcoholic" onClick={()=>handleOnClick("Non_alcoholic")}>Non Alcohol</p>
 				</div>
 			</div>
 			<div className="drinks">

@@ -43,7 +43,7 @@ export default function Dashboard(){
 				</div>
 				<div className="info-user">
 					<h3>{user.slice(0, user.indexOf("@"))}</h3>
-					<small>Posible alcoholico/a</small>
+					<small>Possible alcoholic</small>
 				</div>
 			</div>
 			<Button variant="contained" color="secondary" style={{marginLeft: 20}} onClick={logout} >
@@ -52,8 +52,8 @@ export default function Dashboard(){
 			<div>
 				<div className="types">
 					<div>
-						<p className="option liked" onClick={()=>handleOnClick("liked")}>Gustado</p>
-						<p className="option saved" onClick={()=>handleOnClick("saved")}>Guardado</p>
+						<p className="option liked" onClick={()=>handleOnClick("liked")}>Liked</p>
+						<p className="option saved" onClick={()=>handleOnClick("saved")}>Saved</p>
 					</div>
 				</div>
 			</div>
